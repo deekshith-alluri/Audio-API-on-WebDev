@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <!-- BOOTSTRAP V05.3 STYLES FILE INCLUDED IN HEAD -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- ICON FONT LINK BOOTSTRAP v5.3  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- JQUERY CDN LINK  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        input[type="range"]{
+            -webkit-appearance: none;
+            height: 5px;
+            padding: 0;
+            background-color: white;
+            border-bottom: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input[type='range']::-ms-fill-lower{
+            background: white;
+        }
+        input[type='range']::-ms-fill-upper{
+            background: white;
+        }
+        input[type='range']::-moz-range-track{
+            border: none;
+            background: white;
+        }
+        input[type='range']::-webkit-slider-thumb{
+            -webkit-appearance: none !important;
+            background: radial-gradient(orange, red);
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        input[type='range']::-ms-thumb{
+            -webkit-appearance: none !important;
+            background: radial-gradient(orange, red);
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        input[type='range']::-moz-range-thumb{
+            -webkit-appearance: none !important;
+            background: radial-gradient(orange, red);
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+        /* #volume{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #volumeSlider{
+             writing-mode: bt-lr; vertical writing mode for modern browser
+            -webkit-appearance: slider-vertical; 
+            appearance: slider-vertical;
+            height: 100%;
+            width: 4px;
+            transform: rotate(270deg);
+        } */
+    </style>
+
+</head>
+<body>
+    <div id="result"></div>
+    <button class="fw-bold btn btn-danger float-end me-2 my-2">Music Player</button>
+    <!-- HERE IS THE AUDIO.JS FILE THAT NEED TO BE PLACED BEFORE CLOSING HEAD TAG  -->
+    <script src="../audio.js"></script>
+    <script>
+
+            $('button').click(function(){
+                $.ajax({
+                    url: "./testing0001.html",
+                    method: "GET",
+                    dataType: "html",
+                    success: function(response) {
+                        $('#result').html(response);
+                        
+                        // Wait for the image to load in the dynamically loaded content
+                        $('#result').find('img').on('load', function() {
+                            console.log("Image loaded, initializing audio...");
+                            jquery.initAudio("../music/akk-1.mp3");
+                        });
+                    },
+                    error: function(req, status, error) {
+                        console.error("Error: ", status, error);
+                    }
+                });
+            });
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!-- START OF THE AUDIO PLAYER HTML CODE THAT INCLUDES HTML, CSS, JS, JQUERY, BOOTSTRAP -->
+<!--******************************NOTE*****************************-->
+<!-- DO NOT FORGET TO INCLUDE THE AUDIO.JS FILE INTO YOUR HEAD TAG AND THE TAG MUST BE ON THE LAST LINE I.E., BEFORE CLOSING THE HEAD TAG  -->
+
+<!-- span class=\"btn btn-outline-danger ms-3 float-end rounded-3 fs-5 fw-bold\" onclick=\"this.parentElement.style.display='none'; document.querySelector('#alphabet').style.display='block' \">Index &#8620;</span><br -->
+
+<div class="container bg-body-secondary rounded-4 my-1">
+    <div class="row p-4 mb-5">
+        <img id="imgLoadedContainer"  src="https://th.bing.com/th/id/OIP.fsh8WB-zdKllM9AZmSgvuQHaFw?w=252&h=196&c=7&r=0&o=5&pid=1.7" alt="can not be shown" class="col-12">
+    </div>
+</div>
+<div class="container bg-primary fixed-bottom pb-3 pt-4 rounded-3" id="controlingBox">
+    <div class="p-3 text-danger-emphasis bg-danger-subtle border border-primary-subtle rounded-3">
+        {nameTelugu}
+    </div>
+    <br>
+    <div class="row">
+        <input id="seekslider"  type="range" min="0" max="100" value="0" class="col-11 mx-auto">
+    </div>
+    <div class="row" id="timeStamps">
+        <span class="curtime col-6 text-start fs-5 fw-bold" id="curtime">00:00</span>
+        <span class="durtime col-6 text-end fs-5 fw-bold" id="durtime">00:00</span>
+    </div>
+    <div class="row text-white space-around d-flex justify-content-around" id="controls">
+        <span id="repeat" class="text-center col-3 my-1">
+            <i id="repeatbtn" class="bi bi-arrow-repeat fs-1 btn btn-warning rounded-5 border border-1 border-black d-block" title="Repeat Song"></i>
+        </span>
+        <span id="playpause" class="text-center col-3 my-1">
+            <i id="playbtn" class="bi bi-play-circle-fill fs-1 btn btn-success rounded-5 border border-1 border-black d-block" title="Play"></i>
+            <i id="pausebtn" class="bi bi-pause-circle-fill fs-1 btn btn-danger rounded-5 border border-1 border-black d-none" title="Pause"></i>
+        </span>
+        <span id="volume" class="text-center col-3 my-1">
+            <i id="mutebtn" class="bi bi-volume-mute fs-1 btn btn-danger rounded-5 border border-1 border-black d-block" title="Mute"></i>
+            <i id="unmutebtn" class="bi bi-megaphone fs-1 btn btn-info rounded-5 border border-1 border-black d-none" title="Unmute"></i>
+
+        </span>
+
+    </div>
+</div>
