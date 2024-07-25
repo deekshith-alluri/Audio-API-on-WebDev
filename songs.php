@@ -77,7 +77,7 @@
     <div id="result"></div>
     <button class="fw-bold btn btn-danger float-end me-2 my-2">Music Player</button>
     <!-- HERE IS THE AUDIO.JS FILE THAT NEED TO BE PLACED BEFORE CLOSING HEAD TAG  -->
-    <script src="../audio.js"></script>
+    <script src="./audio.js"></script>
     <script>
 
             $('button').click(function(){
