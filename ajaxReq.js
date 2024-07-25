@@ -9,7 +9,7 @@ $('button').click(function(){
             // Wait for the image to load in the dynamically loaded content
             $('#result').find('img').on('load', function() {
                 console.log("Image loaded, initializing audio...");
-                jquery.initAudio("../music/akk-1.mp3");
+                jquery.initAudio("./music/akk-1.mp3");
             });
         },
         error: function(req, status, error) {
